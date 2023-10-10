@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+nav {
+    background-color: #333; 
+    padding: 10px;
+}
+  
+  ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+  }
+  
+  li {
+    margin-bottom: 10px; 
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px; 
+    transition: background-color 0.2s ease;
+  }
+
+  a:hover {
+    background-color: #71c6a5; 
+    color: #fff; 
+  }
+  
+
+  .jla-toolbar{
+    height: 64px;
+    display: -webkit-box;
+    background: #fff;
+    button{
+      background: #71c6a5;
+      border-radius: 4px;
+      border: none;
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .book{
+      width: 100%;
+      text-align: end;
+    }
+  }
+
+  .mobile-toolbar{
+    display: none;
+  }
+
+  @media only screen and (min-device-width: 220px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+    .jla-toolbar{
+      display: none;
+    }
+    .mobile-toolbar{
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #3a3a3c 0 0 no-repeat padding-box;
+      opacity: 1;
+      height: 56px;
+      .mat-icon{
+        color: #fff;
+      }
+      .drawer {
+        position: fixed;
+        height: 100vh;
+        min-width: 25%;
+        border-right: 1px solid #ccc;
+      }
+      .drawer .header {
+        position: absolute;
+        right: 0;
+        justify-content: space-between;
+      }
+      .drawer .contents {
+        padding: 16px;
+      }
+      
+      
+      .main.header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+        border-bottom: 1px solid #ccc;
+        height: 56px;
+      }
+      
+      .main.contents {
+        min-height: 100vh;
+        margin-top: 64px; /* height of header */
+        padding: 16px;
+      }
+      
+      .main.footer {
+        position: fixed;
+        border-top: 1px solid #ccc;
+        bottom: 0;
+        width: 100%;
+      }
+      
+    }
+  }

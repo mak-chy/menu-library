@@ -1,0 +1,43 @@
+<div class="jla-toolbar">
+  <mat-toolbar>
+    <div class="book">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        Book a repair visit
+        </button>
+    </div>
+  </mat-toolbar>
+</div>
+
+<div class="mobile-toolbar">
+  <mat-drawer-container
+  [class.drawer-opened]="drawer.opened"
+  class="example-container"
+>
+  <mat-drawer #drawer class="drawer" mode="side" opened="false">
+    <mat-toolbar class="header">
+    
+      <mat-icon class="close" (click)="drawer.close()">close</mat-icon>
+    </mat-toolbar>
+    <div class="contents">
+      <mat-list role="list">
+        <mat-list-item role="listitem">Item 1</mat-list-item>
+        <mat-list-item role="listitem">Item 2</mat-list-item>
+        <mat-list-item role="listitem">Item 3</mat-list-item>
+      </mat-list>
+    </div>
+  </mat-drawer>
+
+  <mat-toolbar class="main header">
+    <mat-icon *ngIf="!drawer.opened" (click)="drawer.toggle()"> menu </mat-icon>
+
+  </mat-toolbar>
+
+  <!-- <div class="main contents">
+    drawer opened: {{drawer.opened}}
+    <div>
+      Contents xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx
+      xxxxxxx xxxxxx xxxxxx
+    </div>
+  </div> -->
+</mat-drawer-container>
+</div>

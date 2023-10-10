@@ -1,0 +1,22 @@
+    .row{
+        display: flex; /* Use flexbox for the main container */
+        justify-content: space-between; /* Spread items horizontally */
+      
+    }
+    .left-content{
+        flex: 20%;
+    }
+    .right-content{
+        flex: 80%;
+    }
+
+    @media only screen and (min-device-width: 220px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+        .left-content{
+            display: none;
+        }
+
+        .right-content{
+            flex: 100%;
+        }
+
+    }

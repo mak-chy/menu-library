@@ -1,0 +1,53 @@
+<nav class="nav-desktop">
+  <a class="logo" href="https://example.com">
+    <img [src]="logoSrc" alt="Your Logo">
+  </a>
+  <mat-list>
+    <ng-container *ngFor="let menuItem of menuItems">
+      <ng-container *ngIf="menuItem.children && menuItem.children.length > 0">
+        <h2 class="subheader sub-label">{{ menuItem.label }}</h2>
+        <mat-list-item
+          *ngFor="let children of menuItem.children"
+          [ngClass]="{'active': children.active}"
+          routerLinkActive="active"
+        >
+          <a class="sub-label" [routerLink]="children.route">{{ children.label }}</a>
+        </mat-list-item>
+      </ng-container>
+      <ng-container *ngIf="!(menuItem.children && menuItem.children.length > 0)">
+        <mat-list-item [ngClass]="{'active': menuItem.active}" routerLinkActive="active">
+          <a class="subheader sub-label" [routerLink]="menuItem.route">{{ menuItem.label }}</a>
+        </mat-list-item>
+      </ng-container>
+    </ng-container>
+  </mat-list>
+</nav> 
+
+
+
+<!-- <mat-drawer-container
+  [class.drawer-opened]="drawer.opened"
+  class="example-container"
+>
+  <mat-drawer #drawer class="drawer" mode="side" opened="false">
+    <mat-toolbar class="header">
+      <div>Logo</div>
+      <mat-icon class="close" (click)="drawer.close()">close</mat-icon>
+    </mat-toolbar>
+    <div class="contents">Drawer</div>
+  </mat-drawer>
+
+  <mat-toolbar class="main header">
+    <mat-icon *ngIf="!drawer.opened" (click)="drawer.toggle()"> menu </mat-icon>
+    <div>Header</div>
+  </mat-toolbar>
+
+  <div class="main contents">
+    drawer opened: {{drawer.opened}}
+    <div>
+      Contents xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx
+      xxxxxxx xxxxxx xxxxxx
+    </div>
+    <div style="height: 1000px">&nbsp;</div>
+  </div>
+</mat-drawer-container> -->
